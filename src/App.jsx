@@ -37,15 +37,6 @@ function ExternalLink({ href, children, className = '' }) {
   );
 }
 
-function SectionLabel({ children, light = false }) {
-  return (
-    <p className={`section-label${light ? ' section-label-light' : ''}`}>
-      <span className="label-rule" aria-hidden="true" />
-      {children}
-    </p>
-  );
-}
-
 function useScrollReveal() {
   useEffect(() => {
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -207,73 +198,31 @@ function Header() {
 }
 
 function HeroArtwork() {
+  const project = projects[0];
+  const screenshot = project.screenshots[0];
+
   return (
-    <div className="hero-art" aria-hidden="true">
-      <div className="art-backdrop">
-        <span className="art-backdrop-type">
-          form
-          <br />
-          &amp; function
-        </span>
-        <span className="art-edition">AN INTERFACE STUDY</span>
-      </div>
-      <div className="art-browser">
-        <div className="browser-chrome">
+    <figure className="hero-preview">
+      <div className="screenshot-frame">
+        <div className="browser-chrome" aria-hidden="true">
           <div className="browser-dots">
             <i />
             <i />
             <i />
           </div>
-          <span>thoughtfully built.</span>
+          <span>{project.title} / {screenshot.label}</span>
           <span className="browser-plus">+</span>
         </div>
-        <div className="art-browser-content">
-          <div className="art-mini-nav">
-            <img
-              className="art-mini-logo"
-              src="/monogram.svg"
-              alt=""
-              width="28"
-              height="28"
-            />
-            <span>Ideas into interfaces</span>
-          </div>
-          <p className="art-hello">
-            A little detail.
-            <br />
-            <span className="text-accent">A better experience.</span>
-          </p>
-          <div className="art-component-row">
-            <div className="art-component-feature">
-              <span className="art-spark">✳</span>
-              <span>
-                Made with
-                <br />
-                intention.
-              </span>
-            </div>
-            <div className="art-component-lines">
-              <i />
-              <i />
-              <i />
-              <span />
-            </div>
-          </div>
-          <div className="art-browser-footer">
-            <span>DESIGN WITH CARE</span>
-            <span>BUILD WITH REACT</span>
-          </div>
-        </div>
+        <img
+          src={screenshot.src}
+          alt={screenshot.alt}
+          width={screenshot.width}
+          height={screenshot.height}
+          decoding="async"
+        />
       </div>
-      <div className="art-react-note">
-        <Braces size={23} />
-        <span>
-          Thoughtful details.
-          <br />
-          <strong>ReactJS underneath.</strong>
-        </span>
-      </div>
-    </div>
+      <figcaption>ChayBook, my team project (Sep–Nov 2026)</figcaption>
+    </figure>
   );
 }
 
@@ -298,8 +247,7 @@ function Hero() {
             {profile.headline[1]}
           </h1>
           <p className="hero-subheading hero-entrance">
-            ReactJS interfaces.
-            <br className="desktop-break" /> Practical frontend work.
+            I build ReactJS interfaces.
           </p>
           <p className="hero-description hero-entrance">
             {profile.introduction}
@@ -318,10 +266,8 @@ function Hero() {
       <div className="hero-bottom">
         <span>FRONTEND DEVELOPER INTERN</span>
         <a href="#about">
-          <span className="scroll-mark" aria-hidden="true" />A LITTLE MORE ABOUT
-          ME
+          <span className="scroll-mark" aria-hidden="true" />ABOUT ME
         </a>
-        <span>PERSONAL PORTFOLIO / {new Date().getFullYear()}</span>
       </div>
     </section>
   );
@@ -335,14 +281,9 @@ function About() {
       aria-labelledby="about-title"
     >
       <div className="container">
-        <SectionLabel>A LITTLE ABOUT ME</SectionLabel>
         <div className="about-grid">
           <div data-reveal>
-            <h2 id="about-title">
-              A curious mind.
-              <br />
-              <span className="text-accent">A frontend focus.</span>
-            </h2>
+            <h2 id="about-title">About</h2>
             <p className="body-copy">{profile.about}</p>
             <p className="body-copy">{profile.direction}</p>
           </div>
@@ -354,13 +295,6 @@ function About() {
             <div className="education-heading">
               <span className="education-mark" aria-hidden="true">
                 fpt<span>university</span>
-              </span>
-              <span className="eyebrow">
-                LEARNING.
-                <br />
-                BUILDING.
-                <br />
-                GROWING.
               </span>
             </div>
             <h3>{profile.university}</h3>
@@ -414,14 +348,14 @@ function ProjectCard({ project }) {
                 href={project.demo}
                 className="button button-outline"
               >
-                Live Demo
+                Live demo
               </ExternalLink>
               <ExternalLink
                 href={project.source}
                 className="button button-outline"
               >
                 <Github size={18} aria-hidden="true" />
-                Source Code
+                GitHub repo
               </ExternalLink>
             </div>
           )}
@@ -431,21 +365,20 @@ function ProjectCard({ project }) {
             <h4>MY CONTRIBUTIONS</h4>
             <span>{project.role}</span>
           </div>
-          <dl>
+          <ul className="contribution-list">
             {project.contributions.map((item) => (
-              <div className="contribution" key={item.title}>
-                <dt>{item.title}</dt>
-                <dd>
-                  <p>{item.description}</p>
-                  {item.technicalDetail && (
-                    <p className="contribution-technical">
-                      {item.technicalDetail}
-                    </p>
-                  )}
-                </dd>
-              </div>
+              <li className="contribution" key={item.title}>
+                <p>
+                  <strong>{item.title}.</strong> {item.description}
+                </p>
+                {item.technicalDetail && (
+                  <p className="contribution-technical">
+                    {item.technicalDetail}
+                  </p>
+                )}
+              </li>
             ))}
-          </dl>
+          </ul>
         </div>
       </div>
     </article>
@@ -460,17 +393,8 @@ function Work() {
       aria-labelledby="work-title"
     >
       <div className="container">
-        <SectionLabel>SELECTED WORK</SectionLabel>
         <div className="section-heading" data-reveal>
-          <h2 id="work-title">
-            A team project.
-            <br />
-            <span className="text-accent">My frontend work.</span>
-          </h2>
-          <p>
-            A closer look at the project
-            <br className="desktop-break" /> I’ve been contributing to.
-          </p>
+          <h2 id="work-title">Projects</h2>
         </div>
         <div className="project-list">
           {projects.map((project) => (
@@ -492,18 +416,12 @@ function Skills() {
       aria-labelledby="skills-title"
     >
       <div className="container">
-        <SectionLabel>THE TOOLKIT</SectionLabel>
         <div className="skills-grid">
           <div className="skills-intro" data-reveal>
-            <h2 id="skills-title">
-              A practical
-              <br />
-              <span className="text-accent">frontend toolkit.</span>
-            </h2>
+            <h2 id="skills-title">Skills</h2>
             <p className="body-copy">
-              The tools I work with, and the foundations I keep building on.
+              I used these tools in ChayBook.
             </p>
-            <span className="skills-aside">ALWAYS A WORK IN PROGRESS.</span>
           </div>
           <div className="skills-rows">
             {skills.map((group) => {
@@ -560,19 +478,11 @@ function Contact() {
       aria-labelledby="contact-title"
     >
       <div className="container">
-        <SectionLabel light>LET’S CONNECT</SectionLabel>
         <div className="contact-grid">
           <div data-reveal>
-            <h2 id="contact-title">
-              Let’s build
-              <br />
-              something
-              <br />
-              <span className="text-accent">meaningful.</span>
-            </h2>
+            <h2 id="contact-title">Contact</h2>
             <p className="contact-description">
-              Looking for a frontend intern who cares about the details?
-              <br className="desktop-break" /> I’d love to hear from you.
+              I’d be happy to talk about a Frontend Developer OJT with your team.
             </p>
           </div>
           <div className="contact-details" data-reveal>
@@ -632,7 +542,6 @@ function Contact() {
           <p>
             © {new Date().getFullYear()} {profile.name}.
           </p>
-          <p>Thoughtfully designed. Built with React.</p>
           <a href="#top">Back to top</a>
         </footer>
       </div>

@@ -256,7 +256,7 @@ svg {
   display: none;
 }
 
-/* Oversized type paired with a hand-built interface study. */
+/* Existing hero layout with an authentic project preview. */
 .hero {
   padding-top: 35px;
 }
@@ -313,7 +313,7 @@ svg {
   margin-left: -3px;
 }
 .hero-subheading {
-  color: var(--accent);
+  color: var(--ink);
   font-family: var(--font-display);
   font-size: clamp(1.5rem, 2.2vw, 2rem);
   font-weight: 600;
@@ -363,6 +363,17 @@ svg {
   border-color: var(--accent-hover);
   color: var(--accent-hover);
 }
+.hero-preview {
+  width: 100%;
+  max-width: 520px;
+  justify-self: center;
+}
+.hero-preview figcaption {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
 .hero-bottom {
   border-top: 1px solid var(--line);
   padding-block: 25px;
@@ -404,56 +415,6 @@ svg {
   left: 4.5px;
   background: var(--accent);
 }
-.hero-art {
-  height: 468px;
-  position: relative;
-  margin-top: 14px;
-  margin-left: 15px;
-  animation: enter 240ms 100ms both;
-}
-.art-backdrop {
-  position: absolute;
-  inset: 0 15px 59px 50px;
-  overflow: hidden;
-  border-radius: var(--radius);
-  background: var(--accent);
-}
-.art-backdrop-type {
-  position: absolute;
-  inset: 23px 0 auto 28px;
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 2.8vw, 2.5rem);
-  font-weight: 600;
-  line-height: 1.05;
-  letter-spacing: -0.04em;
-  color: #fff7ed;
-}
-.art-backdrop-type i {
-  font-size: 0.7em;
-}
-.art-edition {
-  position: absolute;
-  top: 31px;
-  right: 20px;
-  writing-mode: vertical-rl;
-  font-size: 0.55rem;
-  letter-spacing: 0.16em;
-  color: #f7dfce;
-}
-.art-browser {
-  position: absolute;
-  top: 134px;
-  left: 0;
-  right: 31px;
-  background: #fffdf7;
-  border: 1px solid #d9d0c3;
-  overflow: hidden;
-  transition:
-    box-shadow var(--duration),
-    border-color var(--duration);
-  box-shadow: var(--shadow-layer);
-  border-radius: var(--radius);
-}
 .browser-chrome {
   height: 32px;
   display: flex;
@@ -485,118 +446,6 @@ svg {
   font-size: 0.875rem;
   line-height: 1;
 }
-.art-browser-content {
-  padding: 18px 24px 0;
-}
-.art-mini-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #777367;
-  font-size: 0.5625rem;
-}
-.art-mini-logo {
-  color: var(--ink);
-  width: 28px;
-  height: 28px;
-}
-.art-hello {
-  margin-top: 15px;
-  font-family: var(--font-display);
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  line-height: 1.25;
-}
-.art-hello em {
-  color: var(--accent);
-  font-size: 1.22em;
-  letter-spacing: -0.02em;
-}
-.art-component-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 13px;
-  margin-block: 23px 21px;
-}
-.art-component-feature {
-  background: #eae9df;
-  min-height: 79px;
-  padding: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  border-radius: 2px;
-}
-.art-spark {
-  color: #758068;
-  font-size: 2.7rem;
-  line-height: 1;
-}
-.art-component-feature > span:last-child {
-  font-size: 0.65rem;
-  line-height: 1.5;
-}
-.art-component-lines {
-  border: 1px solid #e8e1d6;
-  padding: 15px 13px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  border-radius: 2px;
-}
-.art-component-lines i {
-  display: block;
-  height: 3px;
-  width: 90%;
-  background: #d8d2c8;
-}
-.art-component-lines i:nth-child(2) {
-  width: 65%;
-}
-.art-component-lines i:nth-child(3) {
-  width: 80%;
-}
-.art-component-lines > span {
-  width: 28%;
-  height: 10px;
-  background: #c18467;
-  margin-top: 3px;
-}
-.art-browser-footer {
-  display: flex;
-  justify-content: space-between;
-  padding-block: 11px;
-  border-top: 1px solid #e6dfd5;
-  font-size: 0.4375rem;
-  letter-spacing: 0.1em;
-  color: #8a8177;
-}
-.art-react-note {
-  position: absolute;
-  right: 0;
-  bottom: 45px;
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  background: #302f29;
-  color: #e7dbca;
-  padding: 18px 21px;
-  border-radius: var(--radius-small);
-  box-shadow: var(--shadow-soft);
-}
-.art-react-note > svg {
-  color: #d99d7d;
-}
-.art-react-note > span {
-  font-size: 0.7rem;
-  line-height: 1.7;
-}
-.art-react-note strong {
-  color: #faf3e8;
-  font-weight: 500;
-}
 
 /* About reads like a short editorial with an education sidebar. */
 .about-section {
@@ -608,7 +457,7 @@ svg {
   grid-template-columns: 1.15fr 0.85fr;
   gap: 88px;
   align-items: start;
-  margin-top: 36px;
+  margin-top: 0;
 }
 h2 {
   font-size: var(--text-section);
@@ -703,7 +552,7 @@ h2 {
   align-items: end;
   justify-content: space-between;
   gap: 35px;
-  margin-block: 32px 36px;
+  margin-block: 0 36px;
 }
 .section-heading > p {
   font-size: 1.0625rem;
@@ -1232,27 +1081,21 @@ h2 {
   font-size: var(--text-label);
   color: var(--muted);
 }
-.project-contributions dl {
+.contribution-list {
   margin: 0;
+  padding-left: 20px;
 }
 .contribution {
-  display: grid;
-  grid-template-columns: minmax(0, 132px) minmax(0, 1fr);
-  align-items: baseline;
-  gap: 20px;
   padding-block: 18px;
+  padding-left: 4px;
   border-bottom: 1px solid var(--line);
-}
-.contribution dt {
-  font-size: 0.9375rem;
-  letter-spacing: -0.02em;
-  font-weight: 600;
-}
-.contribution dd {
-  margin: 0;
   font-size: 1rem;
   line-height: 1.75;
   color: var(--muted);
+}
+.contribution strong {
+  color: var(--ink);
+  font-weight: 600;
 }
 .contribution-technical {
   margin-top: 8px;
@@ -1269,7 +1112,7 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 72px;
-  margin-top: 36px;
+  margin-top: 0;
 }
 .skills-intro .body-copy {
   max-width: 335px;
@@ -1350,7 +1193,7 @@ h2 {
   grid-template-columns: 1.15fr 0.85fr;
   gap: 90px;
   align-items: center;
-  padding-block: 36px 72px;
+  padding-block: 0 72px;
 }
 .contact-grid h2 {
   font-size: clamp(2.625rem, 5vw, 4.5rem);
@@ -1526,9 +1369,6 @@ h2 {
 .hero-actions {
   animation-delay: 0.27s;
 }
-.hero-art {
-  animation: enter 0.9s 0.15s both;
-}
 @keyframes enter {
   from {
     opacity: 0;
@@ -1538,10 +1378,6 @@ h2 {
   }
 }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .hero-art:hover .art-browser {
-    border-color: var(--line-strong);
-    box-shadow: 0 20px 38px #402b2021;
-  }
   .project-visual:hover .chaybook-browser {
     box-shadow: 0 30px 50px #3a4b2b23;
   }
@@ -1569,42 +1405,11 @@ h2 {
   .hero h1 {
     font-size: var(--text-hero);
   }
-  .hero-art {
-    margin-left: 0;
-    height: 425px;
-  }
-  .art-backdrop {
-    inset: 0 10px 60px 35px;
-  }
-  .art-browser {
-    top: 110px;
-    right: 17px;
-  }
-  .art-browser-content {
-    padding-inline: 19px;
-  }
-  .art-react-note {
-    bottom: 43px;
-    padding: 14px 17px;
-  }
-  .art-component-row {
-    gap: 9px;
-  }
-  .art-component-feature {
-    padding: 9px;
-  }
-  .art-component-feature > span:last-child {
-    font-size: 0.55rem;
-  }
   .about-grid {
     gap: 48px;
   }
   .project-layout {
     gap: 50px;
-  }
-  .contribution {
-    grid-template-columns: 115px 1fr;
-    gap: 15px;
   }
   .skills-grid {
     gap: 60px;
@@ -1637,45 +1442,6 @@ h2 {
   .hero-subheading {
     font-size: 1.5rem;
   }
-  .hero-art {
-    height: 365px;
-  }
-  .art-backdrop {
-    left: 26px;
-    bottom: 40px;
-  }
-  .art-backdrop-type {
-    left: 20px;
-    font-size: 1.8rem;
-  }
-  .art-browser {
-    top: 101px;
-    right: 10px;
-  }
-  .art-browser-content {
-    padding: 12px 16px 0;
-  }
-  .art-hello {
-    margin-top: 9px;
-    font-size: 1.125rem;
-  }
-  .art-mini-nav > span:last-child {
-    font-size: 0.45rem;
-  }
-  .art-component-row {
-    margin-block: 16px;
-  }
-  .art-component-feature {
-    min-height: 65px;
-  }
-  .art-spark {
-    font-size: 2rem;
-  }
-  .art-react-note {
-    right: -5px;
-    bottom: 13px;
-    padding: 12px;
-  }
   .hero-bottom {
     letter-spacing: 0.04em;
   }
@@ -1694,8 +1460,6 @@ h2 {
     gap: 30px;
   }
   .contribution {
-    grid-template-columns: 1fr;
-    gap: 5px;
     padding-block: 13px;
   }
   .skills-grid {
@@ -1831,35 +1595,6 @@ h2 {
   .hero-actions {
     margin-top: 25px;
   }
-  .hero-art {
-    width: min(100% - 12px, 425px);
-    height: 422px;
-    margin: 10px auto 0;
-  }
-  .art-backdrop {
-    left: 40px;
-    right: 10px;
-    bottom: 58px;
-  }
-  .art-backdrop-type {
-    font-size: 2rem;
-  }
-  .art-browser {
-    top: 120px;
-    right: 22px;
-  }
-  .art-hello {
-    font-size: 1.5rem;
-  }
-  .art-component-row {
-    margin-block: 22px 20px;
-  }
-  .art-component-feature > span:last-child {
-    font-size: 0.6rem;
-  }
-  .art-react-note {
-    bottom: 35px;
-  }
   .hero-bottom {
     letter-spacing: 0.025em;
     gap: 13px;
@@ -1872,7 +1607,7 @@ h2 {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 42px;
-    margin-top: 33px;
+    margin-top: 0;
   }
   h2 {
     font-size: var(--text-section);
@@ -2054,14 +1789,10 @@ h2 {
   .project-information h3 {
     font-size: var(--text-project);
   }
-  .contribution {
-    grid-template-columns: 125px 1fr;
-    gap: 20px;
-  }
   .skills-grid {
     grid-template-columns: 1fr;
     gap: 37px;
-    margin-top: 33px;
+    margin-top: 0;
   }
   .skills-intro .body-copy {
     max-width: 430px;
@@ -2081,7 +1812,7 @@ h2 {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 42px;
-    padding-block: 34px 56px;
+    padding-block: 0 56px;
   }
   .contact-grid h2 {
     font-size: clamp(2rem, 6.5vw, 2.5rem);
@@ -2147,62 +1878,6 @@ h2 {
   }
   .button {
     padding-inline: 22px;
-  }
-  .hero-art {
-    height: 365px;
-    width: calc(100% - 8px);
-    margin-top: 5px;
-  }
-  .art-backdrop {
-    left: 30px;
-    bottom: 43px;
-  }
-  .art-backdrop-type {
-    left: 20px;
-    font-size: 1.75rem;
-  }
-  .art-edition {
-    top: 20px;
-    right: 15px;
-  }
-  .art-browser {
-    top: 104px;
-    right: 12px;
-  }
-  .art-browser-content {
-    padding: 11px 17px 0;
-  }
-  .art-hello {
-    margin-top: 10px;
-    font-size: 1.2rem;
-  }
-  .art-mini-nav > span:last-child {
-    font-size: 0.5rem;
-  }
-  .art-component-row {
-    margin-block: 16px;
-    gap: 9px;
-  }
-  .art-component-feature {
-    min-height: 67px;
-  }
-  .art-spark {
-    font-size: 2rem;
-  }
-  .art-component-feature > span:last-child {
-    font-size: 0.55rem;
-  }
-  .art-component-lines {
-    padding: 13px 10px;
-  }
-  .art-react-note {
-    padding: 13px 15px;
-    bottom: 21px;
-    right: -3px;
-    gap: 9px;
-  }
-  .art-react-note > span {
-    font-size: 0.625rem;
   }
   .hero-bottom {
     gap: 3px;
@@ -2270,10 +1945,6 @@ h2 {
   }
   .mealplan-browser .browser-chrome > span:not(.browser-plus) {
     font-size: 0.25rem;
-  }
-  .contribution {
-    grid-template-columns: 1fr;
-    gap: 5px;
   }
   .contribution-heading {
     gap: 10px;

@@ -10,11 +10,11 @@ export const profile = {
   semester: 'Semester 5',
   headline: ['Frontend', 'Developer.'],
   introduction:
-    'I’m Thanh, a Software Engineering student at FPT University, currently focusing on ReactJS and modern frontend development.',
+    'I’m a semester 5 Software Engineering student at FPT University. I’m looking for a Frontend Developer OJT.',
   about:
-    'I’m a fifth-semester Software Engineering student at FPT University, focusing on ReactJS and frontend development. I enjoy making interfaces clear, consistent, and usable.',
+    'I’m studying Software Engineering at FPT University, in semester 5. I use ReactJS and Tailwind CSS in ChayBook, a project with four other students.',
   direction:
-    'Through ChayBook, an academic team project, I’m putting ReactJS into practice. I’m looking for a Frontend Developer internship where I can learn from experienced developers and contribute to real products.',
+    'I built the Admin interface and worked on the Meal Plan and Home Page frontend. For my OJT, I want to work on frontend tasks and learn from code reviews.',
   email: 'thanhhqse183846@fpt.edu.vn',
   github: 'https://github.com/thanhhqse183846-eng',
   linkedin: '', // Show only after a real profile URL is provided.
@@ -24,20 +24,20 @@ export const profile = {
 export const skills = [
   {
     label: 'Core Frontend',
-    description: 'The interface, from structure to interaction.',
+    description: 'I built ChayBook interfaces with ReactJS and Tailwind CSS.',
     icon: 'frontend',
     items: ['ReactJS', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS'],
     highlight: ['ReactJS', 'JavaScript'],
   },
   {
     label: 'API & Integration',
-    description: 'Connecting the interface to application data.',
+    description: 'I connected Admin views to APIs and handled request states.',
     icon: 'integration',
-    items: ['RESTful APIs', 'Axios'],
+    items: ['RESTful APIs'],
   },
   {
     label: 'Development Tools',
-    description: 'Keeping changes organized and working together.',
+    description: 'I used Git and GitHub for our team project.',
     icon: 'tools',
     items: ['Git', 'GitHub'],
   },
@@ -50,41 +50,38 @@ export const projects = [
     subtitle: 'Vegetarian Lifestyle Web Application',
     type: 'Academic team project',
     role: 'Frontend development',
-    year: '2026',
+    year: 'Sep–Nov 2026',
     description:
-      'A team-built web application centered on a vegetarian lifestyle. My part: bringing the Meal Plan, Admin, and Home Page interfaces to life with ReactJS.',
+      'I worked in a team of five on this vegetarian lifestyle web app. ChayBook’s UI is in Vietnamese.',
     contributions: [
-      {
-        title: 'Meal Plan',
-        description: 'Worked on frontend features for the Meal Plan module.',
-        technicalDetail: '', // Optional: add only details verified in ChayBook source or documentation.
-      },
       {
         title: 'Admin interface',
         description:
-          'Contributed to the frontend implementation of the Admin interface.',
-        technicalDetail: '', // Optional: verified implementation details only.
+          'I built the ReactJS Admin interface with API-connected views, including loading, error, and retry states.',
       },
       {
-        title: 'Home Page',
-        description: 'Participated in building the Home Page interface.',
-        technicalDetail: '', // Optional: verified implementation details only.
+        title: 'Meal Plan and Home Page',
+        description: 'I worked on the frontend for both modules.',
       },
       {
-        title: 'Team collaboration',
+        title: 'Testing',
         description:
-          'Collaborated with teammates on ReactJS frontend implementation.',
-        technicalDetail: '', // Optional: verified implementation details only.
+          'I wrote JUnit tests using Mockito and MockMvc for admin access and input validation, and Playwright browser tests for admin workflows.',
+      },
+      {
+        title: 'Backend support',
+        description: 'I also did supporting backend work.',
+        // TODO: Confirm the specific backend changes I authored before adding implementation details here.
       },
     ],
-    stack: ['ReactJS', 'JavaScript', 'Tailwind CSS', 'RESTful APIs'],
-    demo: '', // Add only the verified, public deployed URL.
-    source: '', // Add only the verified, shareable project repository URL.
+    stack: ['ReactJS', 'Vite', 'Tailwind CSS', 'Java', 'Spring Boot', 'SQL Server'],
+    demo: 'https://chay-book.vercel.app/login',
+    source: 'https://github.com/MinNeoVo/ChayBook',
     screenshots: [
       {
         label: 'Home Page',
         src: '/projects/chaybook-home.png',
-        alt: 'ChayBook Home Page with Vietnamese introduction and vegetarian lifestyle tools',
+        alt: 'ChayBook Home Page with an introduction and vegetarian lifestyle tools',
         width: 1883,
         height: 985,
       },
